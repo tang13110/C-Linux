@@ -1,0 +1,1 @@
+Si le 03 s'affiche, les fichiers ne sont push que s'ils ne sont pas vides
