@@ -59,6 +59,6 @@ void Event::display() const{
     cout << "Pas de titre" << endl;
   }
   else{
-    cout << title  << endl;
+    cout << title << endl;
   }
 };

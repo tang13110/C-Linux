@@ -1,4 +1,4 @@
-#ifndef EVENT //pour ne pas inclure plusieurs fois le même fichier .h
+#ifndef EVENT //pour ne pas inclure plusieurs fois le même fichier .h lors de la compilation
 #define EVENT
 
 #include <stdlib.h>
