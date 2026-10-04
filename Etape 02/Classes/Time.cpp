@@ -6,8 +6,8 @@ Time::Time(){
 	#ifdef DEBUG
 		cout << "---Time constructeur par défaut" << endl;
 	#endif
-	hour = 00;
-	minute = 00;
+	hour = 0;
+	minute = 0;
 };
 
 Time::Time(int h, int m){

@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 #include "Time.h"
-//#include "Timing.h"
+#include "Timing.h"
 #include "Event.h"
 
 //using namespace planning;
@@ -88,11 +88,11 @@ void Essai1()
 
   cout << endl << "(4) ***** Test du constructeur d'initialisation de Time (duree) ****************" << endl;
   {
-    Time duration(856);
+    Time duration(986);
     duration.display();
     cout << endl;
   }
-  /*
+  
   cout << endl << "(5) ***** Test du constructeur de copie de Time *******************************" << endl;
   {
     Time h1(10,30);
@@ -102,13 +102,13 @@ void Essai1()
     h2.display();
     cout << endl;
   }
-  */
+
 }
 
 /*******************************************************************************************************/
 /*** Tests de la classe Timing (Agregation par valeur avec un objet Time) ******************************/
 /*******************************************************************************************************/
-/*
+
 void Essai2()
 {
   cout << endl << "(1) ***** Test du constructeur par defaut de Timing ****************************" << endl;
@@ -117,7 +117,7 @@ void Essai2()
     t.display();
     cout << endl;
   }
-
+  /*
   cout << endl << "(2) **** Test des setters/getters **********************************************" << endl;
   {
     Timing t;
@@ -163,7 +163,8 @@ void Essai2()
     t1.display();
     cout << endl << endl;
   }
-}*/
+  */
+}
 
 /*******************************************************************************************************/
 /*** Tests de la classe Event (Agregation par reference d'un objet Timing) *****************************/
