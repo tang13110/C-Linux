@@ -16,7 +16,7 @@ class Time
 		Time();
 		Time(int h, int m);
 		Time(int duree);
-		Time(const Time&a);
+		Time(const Time&);
 		
 		//destructeur
 		~Time();

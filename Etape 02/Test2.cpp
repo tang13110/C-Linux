@@ -25,9 +25,9 @@ int main(int argc,char* argv[])
     switch(choix)
     {
       case 1 : Essai1(); break;
-      /*case 2 : Essai2(); break;
-      case 3 : Essai3(); break;
-      case 4 : Essai4(); break;*/
+      case 2 : Essai2(); break;
+      //case 3 : Essai3(); break;
+      //case 4 : Essai4(); break;
       default : fini = true ; break;
     }
   }
@@ -117,7 +117,7 @@ void Essai2()
     t.display();
     cout << endl;
   }
-  /*
+
   cout << endl << "(2) **** Test des setters/getters **********************************************" << endl;
   {
     Timing t;
@@ -129,12 +129,11 @@ void Essai2()
     cout << "Jour  : " << t.getDay() << endl;
     cout << "Debut : ";
     t.getStart().display();
-    cout << endl;
     cout << "Duree : ";
     t.getDuration().display();
     cout << endl;
   }
-
+  
   cout << endl << "(3) ***** Test du constructeur d'initialisation de Timing **********************" << endl;
   {
     Timing t("Vendredi",Time(13,30),Time(120));
@@ -163,7 +162,7 @@ void Essai2()
     t1.display();
     cout << endl << endl;
   }
-  */
+
 }
 
 /*******************************************************************************************************/

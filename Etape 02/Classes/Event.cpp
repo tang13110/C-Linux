@@ -36,7 +36,7 @@ Event::~Event(){
   if (title) delete title;
 };
 
-//set et get. Set = méthodes qui permettent de donner des valeurs au variables privées.
+//set et get. 
 void Event::setCode(int a){
   if (a < 1) return;
   code = a;

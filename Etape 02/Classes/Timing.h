@@ -10,23 +10,26 @@ using namespace std;
 class Timing
 {
 	private:
-		char* day;
+		string day;
 		Time start, duration;
 	public:
 		//constructeurs
 		Timing();
+		Timing(const string, Time, Time);
+		Timing(const Timing&);
 
 		//destructeurs
 		~Timing();
 
 		//set et get
-		void setDay(char* t);
-		void setStart(Time s);
-		void setDuration(Time d);
-		const char* getDay();
-		void getStart();
-		void getDuration();
+		void setDay(const string);
+		void setStart(Time);
+		void setDuration(Time);
 
+		const string getDay () const;
+		Time getStart() const;
+		Time getDuration() const;
+				
 		//méthodes
 		void display();
 };
