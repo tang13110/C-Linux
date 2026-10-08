@@ -26,9 +26,11 @@ class Event
     //set et get.
     void setCode(int a);
     void setTitle(const char* t);
+    void setTiming(Timing);
 
     int getCode() const;
     const char* getTitle() const;
+    Timing getTiming() const;
 
     //Méthode. 
     void display() const;
