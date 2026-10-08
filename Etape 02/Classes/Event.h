@@ -14,7 +14,9 @@ class Event
     Timing* timing;
 
   public: //ordre: les constructeurs, le destructeur, set et get, (les opérateurs), et puis les méthodes de classes
-    
+    //Variables statiques
+    static int currentCode;
+
     //constructeur
     Event(); 
     Event(int a, const char* t);

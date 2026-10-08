@@ -1,5 +1,7 @@
 #include "Event.h"
 
+//Variables statiques
+int Event::currentCode = 1;
 
 Event::Event()
 {
@@ -31,7 +33,7 @@ Event::Event(const Event&a){
   setTitle (a.getTitle());
   timing = nullptr;
 
-  if(a.timing != nullptr){
+  if(a.timing != nullptr){ //je peux accéder a timing de a prcq c'est la mm classe
     setTiming(a.getTiming());
   };
 }; 

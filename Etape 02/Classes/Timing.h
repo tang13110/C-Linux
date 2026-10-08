@@ -11,8 +11,11 @@ class Timing
 {
 	private:
 		string day;
-		Time start, duration;
+		Time start, duration;		
 	public:
+		//variables constantes
+		static const string MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+		
 		//constructeurs
 		Timing();
 		Timing(const string, Time, Time);

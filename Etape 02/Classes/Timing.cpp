@@ -1,5 +1,8 @@
 #include "Timing.h"
 
+//Variables statiques
+const string Timing::MONDAY = "Lundi", Timing::TUESDAY = "Mardi", Timing::WEDNESDAY = "Mercredi", Timing::THURSDAY = "Jeudi",Timing::FRIDAY = "Vendredi",Timing::SATURDAY = "Samedi",Timing::SUNDAY = "Dimanche";
+
 //Constructeurs
 
 Timing::Timing(){
