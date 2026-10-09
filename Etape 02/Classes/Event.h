@@ -1,4 +1,4 @@
-#ifndef EVENT //pour ne pas inclure plusieurs fois le même fichier .h lors de la compilation
+#ifndef EVENT
 #define EVENT
 
 #include <stdlib.h>
@@ -6,36 +6,41 @@
 #include <string.h>
 #include <Timing.h>
 using namespace std;
-class Event
-{
-  private:
-    int code;
-    char* title;
-    Timing* timing;
 
-  public: //ordre: les constructeurs, le destructeur, set et get, (les opérateurs), et puis les méthodes de classes
-    //Variables statiques
-    static int currentCode;
+namespace planning {
+  class Event
+  {
+    private:
+      int code;
+      char* title;
+      Timing* timing;
 
-    //constructeur
-    Event(); 
-    Event(int a, const char* t);
-    Event(const Event&a);
-    
-    //destructeur
-    ~Event();
+    public:
+      
+      //---Variables statiques---//
+      static int currentCode;
 
-    //set et get.
-    void setCode(int a);
-    void setTitle(const char* t);
-    void setTiming(Timing);
+      //---Constructeurs---//
+      Event(); 
+      Event(int a, const char* t);
+      Event(const Event&a);
+      
+      //---Destructeurs---//
+      ~Event();
 
-    int getCode() const;
-    const char* getTitle() const;
-    Timing getTiming() const;
+      //---Set et Get---//
+      void setCode(int a);
+      void setTitle(const char* t);
+      void setTiming(Timing);
 
-    //Méthode. 
-    void display() const;
-};
+      int getCode() const;
+      const char* getTitle() const;
+      Timing getTiming() const;
+
+      //---Méthodes---//
+      void display() const;
+  };
+
+}
 
 #endif

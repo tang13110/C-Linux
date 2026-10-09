@@ -6,35 +6,39 @@
 #include <string.h>
 #include "Time.h"
 using namespace std;
+using namespace planning;
 
-class Timing
-{
-	private:
-		string day;
-		Time start, duration;		
-	public:
-		//variables constantes
-		static const string MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
-		
-		//constructeurs
-		Timing();
-		Timing(const string, Time, Time);
-		Timing(const Timing&);
+namespace planning {
+	class Timing
+	{
+		private:
+			string day;
+			Time start, duration;		
+		public:
 
-		//destructeurs
-		~Timing();
+			//---Variables constantes---//
+			static const string MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY;
+			
+			//---Constructeurs---//
+			Timing();
+			Timing(const string, Time, Time);
+			Timing(const Timing&);
 
-		//set et get
-		void setDay(const string);
-		void setStart(Time);
-		void setDuration(Time);
+			//---Destructeurs---//
+			~Timing();
 
-		const string getDay () const;
-		Time getStart() const;
-		Time getDuration() const;
-				
-		//méthodes
-		void display();
-};
+			//---set et get---//
+			void setDay(const string);
+			void setStart(Time);
+			void setDuration(Time);
+
+			const string getDay () const;
+			Time getStart() const;
+			Time getDuration() const;
+					
+			//---méthodes---//
+			void display();
+	};
+}
 
 #endif

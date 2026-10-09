@@ -5,7 +5,7 @@ using namespace std;
 #include "Timing.h"
 #include "Event.h"
 
-//using namespace planning;
+using namespace planning;
 
 int  Menu();
 void Essai1();
