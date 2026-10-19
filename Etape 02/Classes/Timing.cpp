@@ -1,9 +1,14 @@
 #include "Timing.h"
-using namespace planning;
 
 namespace planning{
-	//Variables statiques
-	const string Timing::MONDAY = "Lundi", Timing::TUESDAY = "Mardi", Timing::WEDNESDAY = "Mercredi", Timing::THURSDAY = "Jeudi",Timing::FRIDAY = "Vendredi",Timing::SATURDAY = "Samedi",Timing::SUNDAY = "Dimanche";
+	//Variables statiques. Faire un par ligne
+	const string Timing::MONDAY = "Lundi", 
+	Timing::TUESDAY = "Mardi", 
+	Timing::WEDNESDAY = "Mercredi", 
+	Timing::THURSDAY = "Jeudi",
+	Timing::FRIDAY = "Vendredi",
+	Timing::SATURDAY = "Samedi",
+	Timing::SUNDAY = "Dimanche";
 
 	//Constructeurs
 
@@ -12,13 +17,11 @@ namespace planning{
 			cout << "---Time constructeur par défaut" << endl;
 		#endif
 		setDay("---");
-		start.setHour(0);
-		start.setMinute(0);
-		duration.setHour(0);
-		duration.setMinute(0);
+		setStart(Time(0,0));
+		setDuration(Time(0));
 	};
 
-	Timing::Timing(const string d, Time strt, Time drt){
+	Timing::Timing(const string d, const Time& strt, const Time& drt){
 		#ifdef DEBUG
 			cout << "---Time constructeur par initialisation" << endl;
 		#endif
@@ -36,7 +39,7 @@ namespace planning{
 		setDay(a.getDay());
 	}
 
-	//Destructeurs
+	//Destructeur
 
 	Timing::~Timing(){
 		#ifdef DEBUG
@@ -49,12 +52,14 @@ namespace planning{
 		day = d;
 	};
 
-	void Timing::setStart(Time strt){
-		start = strt; 
+	void Timing::setStart(const Time& strt){
+		start.setHour(strt.getHour());
+		start.setMinute(strt.getMinute()); 
 	};
 
-	void Timing::setDuration(Time drt){
-		duration = drt;
+	void Timing::setDuration(const Time& drt){
+		duration.setHour(drt.getHour());
+		duration.setMinute(drt.getMinute());
 	};
 
 	const string Timing::getDay() const {return day;};
@@ -70,7 +75,7 @@ namespace planning{
 	//Méthodes
 
 	void Timing::display() {
-		cout << getDay() << endl;
+		cout << getDay() << " ";
 		start.display();
 		duration.display();
 	};

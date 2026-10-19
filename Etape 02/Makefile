@@ -1,6 +1,8 @@
 #premier fichier Makefile
 #le -I permet d'éviter de devoir faire un include avec le répértoire entier.
 #le DEBUG ne fonctionne pas ?
+#faire un make clean
+
 WAY=./Classes/
 
 Test2: Test2.cpp Event.o Time.o Timing.o

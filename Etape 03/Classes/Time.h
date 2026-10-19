@@ -30,6 +30,8 @@ namespace planning {
 
 			//---méthodes---//
 			void display() const;
+			Time operator=(const Time d);
+			Time operator+(int nMinute);
 	};
 }
 

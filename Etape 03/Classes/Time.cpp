@@ -50,6 +50,8 @@ namespace planning {
 		#endif
 	};
 
+	
+
 	//---Set et Get---//
 
 	void Time::setHour(const int h){hour = h;};
@@ -63,6 +65,28 @@ namespace planning {
 	//méthodes//
 
 	void Time::display() const{
-		cout << hour << ":" << minute << endl;
+		if(minute < 10){
+			cout << hour << ":0" << minute << endl;
+		}
+		else{
+			cout << hour << ":" << minute << endl;
+		}
+	};
+
+	Time Time::operator=(const Time d){
+		hour = d.hour;
+		minute = d.minute;
+		return(*this);
+	};
+
+	Time Time::operator+(int nMinute){
+		Time copie(*this);
+
+		if(nMinute < 0){
+			return d;	
+		}
+		else{
+
+		} 
 	};
 }

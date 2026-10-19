@@ -23,8 +23,8 @@ namespace planning {
 			~Time();
 
 			//---set et get---//
-			void setHour (const int h);
-			void setMinute(const int m);
+			void setHour (int h);
+			void setMinute(int m);
 			int getHour() const;
 			int getMinute() const;
 

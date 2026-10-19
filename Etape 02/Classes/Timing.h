@@ -6,7 +6,6 @@
 #include <string.h>
 #include "Time.h"
 using namespace std;
-using namespace planning;
 
 namespace planning {
 	class Timing
@@ -21,16 +20,16 @@ namespace planning {
 			
 			//---Constructeurs---//
 			Timing();
-			Timing(const string, Time, Time);
-			Timing(const Timing&);
+			Timing(const string d, const Time& strt, const Time& drt);
+			Timing(const Timing& a);
 
 			//---Destructeurs---//
 			~Timing();
 
 			//---set et get---//
-			void setDay(const string);
-			void setStart(Time);
-			void setDuration(Time);
+			void setDay(const string d); //par référence + const
+			void setStart(const Time& strt);
+			void setDuration(const Time& drt);
 
 			const string getDay () const;
 			Time getStart() const;

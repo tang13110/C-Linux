@@ -16,9 +16,6 @@ namespace planning {
       Timing* timing;
 
     public:
-      
-      //---Variables statiques---//
-      static int currentCode;
 
       //---Constructeurs---//
       Event(); 
@@ -31,7 +28,7 @@ namespace planning {
       //---Set et Get---//
       void setCode(int a);
       void setTitle(const char* t);
-      void setTiming(Timing);
+      void setTiming(const Timing&);
 
       int getCode() const;
       const char* getTitle() const;
@@ -39,6 +36,9 @@ namespace planning {
 
       //---Méthodes---//
       void display() const;
+
+      //---Variables statiques---//
+      static int currentCode;
   };
 
 }

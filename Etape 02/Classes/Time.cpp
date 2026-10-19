@@ -1,5 +1,4 @@
 #include "Time.h"
-using namespace planning;
 
 namespace planning {
 	//---Constructeurs---//
@@ -16,8 +15,8 @@ namespace planning {
 		#ifdef DEBUG
 			cout << "---Time constructeur d'initialisation" << endl;
 		#endif
-		Time::setHour(h);
-		Time::setMinute(m);
+		setHour(h);
+		setMinute(m);
 	};
 
 	Time::Time(int duree){
@@ -25,8 +24,8 @@ namespace planning {
 			cout << "---Time constructeur d'initialisation de durée" << endl;
 		#endif
 		if(duree > 0 && duree <= 1440){
-			hour = duree/60;
-			minute = duree%60;
+			setHour(duree/60);
+			setMinute(duree%60);
 		}
 		else{
 			hour = 0;
@@ -52,9 +51,17 @@ namespace planning {
 
 	//---Set et Get---//
 
-	void Time::setHour(const int h){hour = h;};
-
-	void Time::setMinute(const int m){minute = m;};
+	void Time::setHour(int h){
+		if(h < 24 && h >= 0){
+			hour = h;
+		}
+	};
+	
+	void Time::setMinute(int m){
+		if(m < 60 && m >= 0){
+			minute = m;
+		}
+	}; 
 
 	int Time::getHour() const {return hour;};
 
@@ -63,6 +70,11 @@ namespace planning {
 	//méthodes//
 
 	void Time::display() const{
-		cout << hour << ":" << minute << endl;
+		if(minute < 10){
+			cout << hour << ":0" << minute << " ";
+		}
+		else{
+			cout << hour << ":" << minute << " ";
+		}
 	};
 }
