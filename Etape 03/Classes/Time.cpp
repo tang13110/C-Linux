@@ -33,12 +33,12 @@ namespace planning {
 		}
 	};
 
-	Time::Time(const Time&a){
+	Time::Time(const Time& copie){
 		#ifdef DEBUG
 			cout << "---Time constructeur de copie" << endl;
 		#endif
-		setHour(a.getHour());
-		setMinute(a.getMinute());
+		setHour(copie.getHour());
+		setMinute(copie.getMinute());
 	}
 
 	//---Destructeurs---//
@@ -76,5 +76,43 @@ namespace planning {
 		else{
 			cout << hour << ":" << minute << " ";
 		}
+	};
+
+	Time& Time::operator=(const Time&tm){
+		hour = tm.hour;
+		minute = tm.minute;
+
+		return(*this);
+	};
+
+	Time Time::operator+(int number){
+		Time copie(*this);
+
+		if(number < 0){
+			return copie; //appel soustraction ?
+		}
+		else{
+			if((copie.minute + number) > 59){
+				number = copie.minute + number;
+				copie.hour = copie.hour + number/60;
+				copie.minute = number - (number/60) * 60;
+			}else{
+				copie.minute = copie.minute + number;
+			}
+		}
+		return copie;
+	};
+
+	Time Time::operator+(const Time& tm){//pq pas amie ?
+		Time copie(*this);
+		int totalMinutes = tm.hour * 60 + tm.minute;
+		copie = copie + totalMinutes;
+		return copie;
+	};
+
+	//Méthodes AMIES//
+
+	Time operator+(int number, Time& tm){
+		return tm + number;
 	};
 }

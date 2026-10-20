@@ -8,6 +8,8 @@ using namespace std;
 namespace planning {
 	class Time
 	{
+		friend Time operator+(int number, Time& tm);
+
 		private:
 			int hour;
 			int minute;
@@ -17,7 +19,7 @@ namespace planning {
 			Time();
 			Time(int h, int m);
 			Time(int duree);
-			Time(const Time&);
+			Time(const Time& copie);
 			
 			//---Destructeur---//
 			~Time();
@@ -30,7 +32,11 @@ namespace planning {
 
 			//---méthodes---//
 			void display() const;
+			Time& operator=(const Time& tm);
+			Time operator+(int number);
+			Time operator+(const Time& tm);
 	};
+	Time operator+(int number, Time& tm);
 }
 
 #endif
