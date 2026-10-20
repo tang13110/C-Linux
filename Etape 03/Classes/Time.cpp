@@ -1,5 +1,4 @@
 #include "Time.h"
-using namespace planning;
 
 namespace planning {
 	//---Constructeurs---//
@@ -16,8 +15,8 @@ namespace planning {
 		#ifdef DEBUG
 			cout << "---Time constructeur d'initialisation" << endl;
 		#endif
-		Time::setHour(h);
-		Time::setMinute(m);
+		setHour(h);
+		setMinute(m);
 	};
 
 	Time::Time(int duree){
@@ -25,8 +24,8 @@ namespace planning {
 			cout << "---Time constructeur d'initialisation de durée" << endl;
 		#endif
 		if(duree > 0 && duree <= 1440){
-			hour = duree/60;
-			minute = duree%60;
+			setHour(duree/60);
+			setMinute(duree%60);
 		}
 		else{
 			hour = 0;
@@ -50,13 +49,19 @@ namespace planning {
 		#endif
 	};
 
-	
-
 	//---Set et Get---//
 
-	void Time::setHour(const int h){hour = h;};
-
-	void Time::setMinute(const int m){minute = m;};
+	void Time::setHour(int h){
+		if(h < 24 && h >= 0){
+			hour = h;
+		}
+	};
+	
+	void Time::setMinute(int m){
+		if(m < 60 && m >= 0){
+			minute = m;
+		}
+	}; 
 
 	int Time::getHour() const {return hour;};
 
@@ -66,27 +71,10 @@ namespace planning {
 
 	void Time::display() const{
 		if(minute < 10){
-			cout << hour << ":0" << minute << endl;
+			cout << hour << ":0" << minute << " ";
 		}
 		else{
-			cout << hour << ":" << minute << endl;
+			cout << hour << ":" << minute << " ";
 		}
-	};
-
-	Time Time::operator=(const Time d){
-		hour = d.hour;
-		minute = d.minute;
-		return(*this);
-	};
-
-	Time Time::operator+(int nMinute){
-		Time copie(*this);
-
-		if(nMinute < 0){
-			return d;	
-		}
-		else{
-
-		} 
 	};
 }

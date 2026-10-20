@@ -1,11 +1,7 @@
 #include "Event.h"
-using namespace planning;
 
 namespace planning {
-  //---Variables statiques---//
-
-  int Event::currentCode = 1;
-
+  
   //---Constructeurs---//
 
   Event::Event()
@@ -37,10 +33,7 @@ namespace planning {
     title = NULL;
     setTitle (a.getTitle());
     timing = nullptr;
-
-    if(a.timing != nullptr){
-      setTiming(a.getTiming());
-    };
+    setTiming(a.getTiming());
   }; 
 
   //---Destructeur---//
@@ -67,9 +60,11 @@ namespace planning {
     strcpy(title, t);
   };
 
-  void Event::setTiming(Timing Tmng){
+  void Event::setTiming(const Timing& Tmng){
     if (timing) delete timing;
-    timing = new Timing(Tmng);
+    if(&Tmng != nullptr){
+      timing = new Timing(Tmng);
+    };
   };
 
   int Event::getCode() const {return code;};
@@ -97,4 +92,8 @@ namespace planning {
       timing->display();
     }
   };
+
+  //---Variables statiques---//
+
+  int Event::currentCode = 1;
 }
