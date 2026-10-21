@@ -10,6 +10,8 @@ namespace planning {
 	{
 		friend Time operator+(int number, Time& tm);
 		friend Time operator-(int number, Time& tm);
+		friend ostream& operator<<(ostream& s, const Time& tm);
+		friend istream& operator>>(istream& s, Time& tm);
 
 		private:
 			int hour;
@@ -46,6 +48,8 @@ namespace planning {
 	};
 	Time operator+(int number, Time& tm);
 	Time operator-(int number, Time& tm);
+	ostream& operator<<(ostream& s, const Time& tm);
+	istream& operator>>(istream& s, Time& tm);
 }
 
 #endif

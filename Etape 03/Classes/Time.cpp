@@ -164,11 +164,27 @@ namespace planning {
 
 	//Méthodes AMIES//
 
-	Time operator+(int number, Time& tm){
+	Time operator+(int number, Time& tm){ //pq pas constante ?
 		return tm + number;
 	};
 
 	Time operator-(int number, Time& tm){
 		return tm - number;
 	};
+
+	ostream& operator<<(ostream& s, const Time& tm){
+		tm.display();
+		return s;
+	};
+
+	istream& operator>>(istream& s, Time& tm){
+		int h, m;
+		cout << "Heure : ";
+		cin >> h;
+		cout << "Minutes : ";
+		cin >> m;
+		tm.setHour(h); tm.setMinute(m);
+		return s;
+	};
+
 }

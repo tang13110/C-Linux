@@ -31,7 +31,7 @@ int main(int argc,char* argv[])
       case 2 : Essai2(); break;
       case 3 : Essai3(); break;
       case 4 : Essai4(); break;
-      //case 5 : Essai5(); break;
+      case 5 : Essai5(); break;
       //case 6 : Essai6(); break;
       //case 7 : Essai7(); break;
       default : fini = true ; break;
@@ -242,7 +242,7 @@ void Essai4()
 /*******************************************************************************************************/
 /*** Test des operateurs << et >> de la classe Time ****************************************************/
 /*******************************************************************************************************/
-/*void Essai5()
+void Essai5()
 {
   cout << "**********************************************************************" << endl;
   cout << "********* Test des operateurs << et >> de la classe Time *************" << endl;
@@ -252,7 +252,7 @@ void Essai4()
   cin >> h;
   cout << endl << "Voici l'heure que vous avez encodee : " << h << endl;
   cout << endl;
-}*/
+}
 
 /*******************************************************************************************************/
 /*** Tests des operateurs de pre/post in(de)crementation de la classe Time *****************************/
