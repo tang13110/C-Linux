@@ -30,7 +30,7 @@ int main(int argc,char* argv[])
       case 1 : Essai1(); break;
       case 2 : Essai2(); break;
       case 3 : Essai3(); break;
-      //case 4 : Essai4(); break;
+      case 4 : Essai4(); break;
       //case 5 : Essai5(); break;
       //case 6 : Essai6(); break;
       //case 7 : Essai7(); break;
@@ -218,7 +218,7 @@ void Essai3()
 /*******************************************************************************************************/
 /*** Test des operateurs < > == de la classe Time ******************************************************/
 /*******************************************************************************************************/
-/*void Essai4()
+void Essai4()
 {
   cout << "**********************************************************************" << endl;
   cout << "***** Test des operateurs < > == de la classe Time *******************" << endl;
@@ -237,7 +237,7 @@ void Essai3()
   if (h1 > h2) cout << "h1 > h2" << endl;
   if (h1 == h2) cout << "h1 == h2" << endl;
   cout << endl;
-}*/
+}
 
 /*******************************************************************************************************/
 /*** Test des operateurs << et >> de la classe Time ****************************************************/

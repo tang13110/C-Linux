@@ -140,6 +140,28 @@ namespace planning {
 		return copie;
 	};
 
+	int Time::operator<(const Time& tm){
+		return compTime(tm)==-1;
+	};
+
+	int Time::operator>(const Time& tm){
+		return compTime(tm)==1;
+	};
+
+	int Time::operator==(const Time& tm){
+		return compTime(tm)==0;
+	};
+
+	int Time::compTime(const Time& tm){
+		if(hour < tm.hour) return -1;
+		if(hour > tm.hour) return 1;
+		//même heure
+		if(minute < tm.minute) return -1;
+		if(minute > tm.minute) return 1;
+		//même minute donc mm heure
+		return 0;
+	};
+
 	//Méthodes AMIES//
 
 	Time operator+(int number, Time& tm){

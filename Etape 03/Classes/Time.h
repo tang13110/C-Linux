@@ -14,6 +14,8 @@ namespace planning {
 		private:
 			int hour;
 			int minute;
+
+			int compTime(const Time& tm);
 		public:
 
 			//---Constructeurs---//
@@ -38,6 +40,9 @@ namespace planning {
 			Time operator+(const Time& tm);
 			Time operator-(int number);
 			Time operator-(const Time& tm);
+			int operator<(const Time& tm);
+			int operator>(const Time& tm);
+			int operator==(const Time& tm);
 	};
 	Time operator+(int number, Time& tm);
 	Time operator-(int number, Time& tm);
