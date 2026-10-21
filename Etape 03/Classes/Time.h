@@ -9,6 +9,7 @@ namespace planning {
 	class Time
 	{
 		friend Time operator+(int number, Time& tm);
+		friend Time operator-(int number, Time& tm);
 
 		private:
 			int hour;
@@ -35,8 +36,11 @@ namespace planning {
 			Time& operator=(const Time& tm);
 			Time operator+(int number);
 			Time operator+(const Time& tm);
+			Time operator-(int number);
+			Time operator-(const Time& tm);
 	};
 	Time operator+(int number, Time& tm);
+	Time operator-(int number, Time& tm);
 }
 
 #endif

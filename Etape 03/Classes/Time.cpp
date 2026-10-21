@@ -89,7 +89,7 @@ namespace planning {
 		Time copie(*this);
 
 		if(number < 0){
-			return copie; //appel soustraction ?
+			return copie - (number * -1);
 		}
 		else{
 			if((copie.minute + number) > 59){
@@ -110,9 +110,43 @@ namespace planning {
 		return copie;
 	};
 
+	Time Time::operator-(int number){
+		Time copie(*this);
+		if(number < 0){
+			return copie + (number * -1);
+		}
+		else{
+			if(number > 59){
+					copie.hour -= number/60;
+					if(copie.hour < 0){
+						copie.hour = 24 + copie.hour;
+					}
+					number = number - number/60 * 60;
+				}
+			if((copie.minute - number) < 0){
+				copie.hour -= 1;
+				copie.minute = 60 + (copie.minute - number);
+			}else{
+				copie.minute = copie.minute - number;
+			}
+		}
+		return copie;
+	};
+
+	Time Time::operator-(const Time& tm){//pq pas amie ?
+		Time copie(*this);
+		int totalMinutes = tm.hour * 60 + tm.minute;
+		copie = copie - totalMinutes;
+		return copie;
+	};
+
 	//Méthodes AMIES//
 
 	Time operator+(int number, Time& tm){
 		return tm + number;
+	};
+
+	Time operator-(int number, Time& tm){
+		return tm - number;
 	};
 }

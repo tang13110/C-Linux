@@ -29,7 +29,7 @@ int main(int argc,char* argv[])
     {
       case 1 : Essai1(); break;
       case 2 : Essai2(); break;
-      //case 3 : Essai3(); break;
+      case 3 : Essai3(); break;
       //case 4 : Essai4(); break;
       //case 5 : Essai5(); break;
       //case 6 : Essai6(); break;
@@ -158,7 +158,7 @@ void Essai2()
 /*******************************************************************************************************/
 /*** Tests de l'operateur - de la classe Time **********************************************************/
 /*******************************************************************************************************/
-/*void Essai3()
+void Essai3()
 {
   cout << endl << "********************************************************************" << endl;
   cout <<         "(1) ***** Test de l'operateur (Time - int) *************************" << endl;
@@ -172,8 +172,8 @@ void Essai2()
     h2 = h - 30;
     cout << "h2 : ";
     h2.display();
-    cout << endl << ">>>>> h2 = h2 - 70;" << endl;
-    h2 = h2 - 70;
+    cout << endl << ">>>>> h2 = h2 - 171;" << endl;
+    h2 = h2 - 171;
     cout << "h2 : ";
     h2.display();
     cout << endl << "h (apres) : "; // h ne doit pas etre modifie !!!!
@@ -213,7 +213,7 @@ void Essai2()
     duration.display();
     cout << endl;
   }
-}*/
+}
 
 /*******************************************************************************************************/
 /*** Test des operateurs < > == de la classe Time ******************************************************/
