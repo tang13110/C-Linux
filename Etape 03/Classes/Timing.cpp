@@ -79,4 +79,45 @@ namespace planning{
 		start.display();
 		duration.display();
 	};
+
+	int Timing::compTiming(const Timing& tmg){
+		if(tmg.day == day){
+			if(start > tmg.start) return 1;
+			if(start < tmg.start) return -1;
+			//même heure de début
+			if(duration > tmg.duration) return 1;
+			if(duration < tmg.duration) return -1;
+			//même durée
+			return 0;
+		}else{
+			string jours[7] = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"};
+			string joursComp[2] = {day, tmg.day};
+			int i = 0, posDeux[2];
+			while (i < 2){
+				int j = 0;
+				while(j < 7){
+					if(jours[j] == joursComp[i]){
+						posDeux[i] = j;
+						j == 7;
+					}
+					j++;
+				}
+				i++;
+			}
+			if(posDeux[0] > posDeux[1]) return 1;
+			return 1;
+		}
+	};
+
+	int Timing::operator>(const Timing& tmg){
+		return compTiming(tmg)==1;
+	};
+
+	int Timing::operator<(const Timing& tmg){
+		return compTiming(tmg)==-1;
+	};
+
+	int Timing::operator==(const Timing& tmg){
+		return compTiming(tmg)==0;
+	};
 }

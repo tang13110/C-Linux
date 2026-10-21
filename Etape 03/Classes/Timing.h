@@ -12,7 +12,9 @@ namespace planning {
 	{
 		private:
 			string day;
-			Time start, duration;		
+			Time start, duration;
+
+			int compTiming(const Timing& tmg);		
 		public:
 
 			//---Variables constantes---//
@@ -37,6 +39,9 @@ namespace planning {
 					
 			//---méthodes---//
 			void display();
+			int operator>(const Timing& tmg);
+			int operator<(const Timing& tmg);
+			int operator==(const Timing& tmg);
 	};
 }
 
