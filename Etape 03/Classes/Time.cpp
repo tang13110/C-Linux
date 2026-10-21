@@ -162,6 +162,28 @@ namespace planning {
 		return 0;
 	};
 
+	Time Time::operator++(){
+		(*this) = (*this) + 30;
+		return (*this);
+	};
+
+	Time Time::operator++(int pourDiff){
+		Time copie(*this);
+		(*this) = (*this) + 30;
+		return copie;
+	};
+
+	Time Time::operator--(){
+		(*this) = (*this) - 30;
+		return (*this);
+	};
+
+	Time Time::operator--(int pourDiff){
+		Time copie(*this);
+		(*this) = (*this) - 30;
+		return copie;
+	};
+
 	//Méthodes AMIES//
 
 	Time operator+(int number, Time& tm){ //pq pas constante ?

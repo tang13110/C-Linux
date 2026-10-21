@@ -45,6 +45,10 @@ namespace planning {
 			int operator<(const Time& tm);
 			int operator>(const Time& tm);
 			int operator==(const Time& tm);
+			Time operator++();
+			Time operator++(int pourDiff);
+			Time operator--();
+			Time operator--(int pourDiff);
 	};
 	Time operator+(int number, Time& tm);
 	Time operator-(int number, Time& tm);

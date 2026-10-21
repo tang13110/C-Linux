@@ -32,7 +32,7 @@ int main(int argc,char* argv[])
       case 3 : Essai3(); break;
       case 4 : Essai4(); break;
       case 5 : Essai5(); break;
-      //case 6 : Essai6(); break;
+      case 6 : Essai6(); break;
       //case 7 : Essai7(); break;
       default : fini = true ; break;
     }
@@ -257,7 +257,7 @@ void Essai5()
 /*******************************************************************************************************/
 /*** Tests des operateurs de pre/post in(de)crementation de la classe Time *****************************/
 /*******************************************************************************************************/
-/*void Essai6()
+void Essai6()
 {
   cout << "**********************************************************************" << endl;
   cout << "(1) ***** Test de l'operateur de pre-incrementation ******************" << endl;
@@ -290,7 +290,7 @@ void Essai5()
   cout << "h4   : " << h4 << endl;
   cout << "h4-- : " << h4-- << endl;  // Si tout va bien, h4 est decremente apres avoir ete affiche !
   cout << "h4   : " << h4 << endl << endl;
-}*/
+}
 
 /*******************************************************************************************************/
 /*** Test des operateurs < > == de la classe Timing ****************************************************/
