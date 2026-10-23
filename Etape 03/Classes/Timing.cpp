@@ -105,7 +105,7 @@ namespace planning{
 				i++;
 			}
 			if(posDeux[0] > posDeux[1]) return 1;
-			return 1;
+			return -1;
 		}
 	};
 
