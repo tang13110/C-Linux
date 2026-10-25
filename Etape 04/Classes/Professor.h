@@ -8,27 +8,29 @@ using namespace std;
 class Professor : public Schedulable
 {
 	friend ostream& operator<<(ostream& s, const Professor& pf);
+
 	private:
 		string lastName, firstName;
 
 	public:
 	//Constructeurs//
 		Professor();
-		Professor(int num, string lstName, string frstName); //REF ET CONST !!! => partout
+		Professor(int num, const string& lstName, const string& frstName);  
 		Professor(const Professor& a);
 
 	//Desctructeur//
 		~Professor();
 
 	//Set et Get//
-		void setLastName(string lstName);
-		void setFirstName(string frstName);
-		const string getLastName() const;
-		const string getFirstName() const;
+		void setLastName(const string& lstName);
+		void setFirstName(const string& frstName);
+		string getLastName() const;
+		string getFirstName() const;
 
 	//Méthodes//
-		const string toString() const;
-		const string toTulpe() const;
+		string toString() const;
+		string tuple() const;
+		Professor& operator=(const Professor& pf);
 };
 
 ostream& operator<<(ostream& s, const Professor& pf);

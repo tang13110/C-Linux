@@ -24,15 +24,15 @@ class Schedulable
 		Schedulable(const Schedulable& a);
 
 		//Destructeur//
-		~Schedulable();	//pourquoi le noter si on utilise le destr de base ? pédagogie ?
+		~Schedulable();	//pourquoi le noter depuis le début si on utilise le destr de base ? pédagogie ?
 
 		//Set et Get//
 		int getId();
 		void setId(int num);
 
 		//Méthodes//
-		const string toString();
-		const string toTulpe();
+		string toString();
+		string tuple();
 };
 
 #endif

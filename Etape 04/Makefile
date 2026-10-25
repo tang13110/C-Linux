@@ -1,5 +1,6 @@
 #le DEBUG ne fonctionne pas
-#Trier les classes. Pour rappel, présence d'une arborescence prof/eleve/cours <- Schedulable
+#Trier les classes (demander pfo). Pour rappel, présence d'une arborescence prof/eleve/cours <- Schedulable
+
 WAY=./Classes/
 OBJ=$(WAY)Time.o $(WAY)Event.o $(WAY)Timing.o $(WAY)Professor.o $(WAY)Schedulable.o
 

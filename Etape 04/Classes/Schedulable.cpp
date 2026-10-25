@@ -41,6 +41,3 @@
 		};
 
 		//Méthodes//
-
-		/*const string toString(){return "ok";};
-		const string toTulpe(){return "ok";};*/

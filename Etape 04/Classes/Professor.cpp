@@ -9,7 +9,7 @@
 		setFirstName("---");
 	};
 
-	Professor::Professor(int num, string lstName, string frstName):Schedulable(num){
+	Professor::Professor(int num, const string& lstName, const string& frstName):Schedulable(num){
 		#ifdef DEBUG
 		cout << "---Professor constructeur d'initialisation" << endl;
 		#endif
@@ -33,29 +33,36 @@
 	};
 
 	//Set et Get//
-	void Professor::setLastName(string lstName){
+	void Professor::setLastName(const string& lstName){
 		lastName = lstName;
 	};
 
-	void Professor::setFirstName(string frstName){
+	void Professor::setFirstName(const string& frstName){
 		firstName = frstName;
 	};
 
-	const string Professor::getLastName() const{
+	string Professor::getLastName() const{
 		return lastName;
 	};
 
-	const string Professor::getFirstName() const{
+	string Professor::getFirstName() const{
 		return firstName;
 	};
 
 	//Méthodes//
 
-	const string Professor::toString() const{
+	string Professor::toString() const{
 		return lastName+" "+firstName;
 	};
-	const string Professor::toTulpe() const{
-		return id+";"+lastName+";"+firstName;
+	string Professor::tuple() const{
+		return to_string(id)+";"+lastName+";"+firstName;
+	};
+
+	Professor& Professor::operator=(const Professor& pf){
+		id = pf.id;
+		lastName = pf.lastName;
+		firstName = pf.firstName;
+		return (*this);
 	};
 
 	//Méthodes amies//

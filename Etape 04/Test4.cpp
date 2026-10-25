@@ -75,20 +75,20 @@ void Essai1()
   Professor p3(p2);
   cout << "--> Voici p3 : " << p3 << endl;
 
-  //cout << endl << "----- 1.4 Test des getXXX() et setXXX() de Professor --------------------------" << endl;
-  //p3.setLastName("Quettier");
-  //p3.setFirstName("Patrick");
-  //cout << "Last name  : " << p3.getLastName() << endl;
-  //cout << "First name : " << p3.getFirstName() << endl;
-  //cout << "id         : " << p3.getId() << endl;
+  cout << endl << "----- 1.4 Test des getXXX() et setXXX() de Professor --------------------------" << endl;
+  p3.setLastName("Quettier");
+  p3.setFirstName("Patrick");
+  cout << "Last name  : " << p3.getLastName() << endl;
+  cout << "First name : " << p3.getFirstName() << endl;
+  cout << "id         : " << p3.getId() << endl;
 
-  //cout << endl << "----- 1.5 Test des methodes virtuelles de Professor ---------------------------" << endl;
-  //cout << "toString() --> " << p3.toString() << endl;
-  //cout << "tuple()    --> " << p3.tuple() << endl;
+  cout << endl << "----- 1.5 Test des methodes virtuelles de Professor ---------------------------" << endl;
+  cout << "toString() --> " << p3.toString() << endl;
+  cout << "tuple()    --> " << p3.tuple() << endl;
 
-  //cout << endl << "----- 1.6 Test de l'operateur = de Professor ----------------------------------" << endl;
-  //p1 = p3;
-  //cout << "--> Voici p1 (apres affectation) : " << p1 << endl;
+  cout << endl << "----- 1.6 Test de l'operateur = de Professor ----------------------------------" << endl;
+  p1 = p3;
+  cout << "--> Voici p1 (apres affectation) : " << p1 << endl;
 }
 
 /***********************************************************************************************/
