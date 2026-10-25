@@ -29,8 +29,8 @@ class Classroom : public Schedulable
 		int getSeatingCapacity();
 
 	//Méthodes//
-		string toString() const;
-		string tuple() const;
+		string toString() const override;
+		string tuple() const override;
 		Classroom& operator=(const Classroom& clsrm); //voir professeur.h
 };
 

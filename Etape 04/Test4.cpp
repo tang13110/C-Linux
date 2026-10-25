@@ -27,8 +27,8 @@ int main(int argc,char* argv[])
       case 1 : Essai1(); break;
       case 2 : Essai2(); break;
       case 3 : Essai3(); break;
-      //case 4 : Essai4(); break;
-      //case 5 : Essai5(); break;
+      case 4 : Essai4(); break;
+      case 5 : Essai5(); break;
       default : fini = true ; break;
     }
   }
@@ -165,7 +165,7 @@ void Essai3()
 // A FAIRE : normalement rien...
 //           juste comprendre et tester le code ci-dessous
 
-/*void Essai4()
+void Essai4()
 {
   srand((unsigned)time(NULL));
 
@@ -199,13 +199,15 @@ void Essai3()
   cout << endl << "----- 4.3 Liberation memoire ---------------------------------------------------" << endl;
   for (int i=0 ; i<10 ; i++) delete schedulables[i];  // Tout se passe-t-il comme vous voulez ?
   // Pour etre plus precis, quid des destructeurs et de la virtualite ?
-}*/
+  // -> La virtualité permet d'afficher correctement les objets de schedulable. L'appel se fait selon Group, Classroom ou Professor.
+  // Le destructeur est appelé après l'accolade ci-dessous, d'abord il élimine la fille puis la mère. Que schedulable appelé.
+}
 
 /*********************************************************************************************/
 // A FAIRE : normalement rien dans vos classes...
 //           juste comprendre et tester le code ci-dessous
 
-/*void Essai5()
+void Essai5()
 {
   srand((unsigned)time(NULL));
 
@@ -246,4 +248,4 @@ void Essai3()
 
   cout << endl << "----- 5.3 Liberation memoire ---------------------------------------------------" << endl;
   for (int i=0 ; i<10 ; i++) delete schedulables[i];
-}*/
+}

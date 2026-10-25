@@ -41,3 +41,6 @@
 		};
 
 		//Méthodes//
+
+		string Schedulable::toString() const {return "a";};
+		string Schedulable::tuple() const {return "a";};

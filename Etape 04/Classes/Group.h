@@ -26,8 +26,8 @@ class Group : public Schedulable
 		string getName() const;
 
 	//Méthodes//
-		string toString() const;
-		string tuple() const;
+		string toString() const override;
+		string tuple() const override;
 		Group& operator=(const Group& grp); //voir professeur.h
 };
 

@@ -28,8 +28,8 @@ class Professor : public Schedulable
 		string getFirstName() const;
 
 	//Méthodes//
-		string toString() const;
-		string tuple() const;
+		string toString() const override;
+		string tuple() const override;
 		Professor& operator=(const Professor& pf); //puis-je faire un operator= dans schedulable et faire un override ?
 };
 

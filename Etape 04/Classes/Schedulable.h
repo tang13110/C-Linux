@@ -31,8 +31,8 @@ class Schedulable
 		void setId(int num);
 
 		//Méthodes//
-		string toString();
-		string tuple();
+		virtual string toString() const;
+		virtual string tuple() const;
 };
 
 #endif
