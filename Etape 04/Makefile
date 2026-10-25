@@ -1,10 +1,10 @@
 #le DEBUG ne fonctionne pas
-#Trier les classes (demander pfo). Pour rappel, présence d'une arborescence prof/eleve/cours <- Schedulable
+#Trier les classes (demander prof). 
 
 WAY=./Classes/
-OBJ=$(WAY)Time.o $(WAY)Event.o $(WAY)Timing.o $(WAY)Professor.o $(WAY)Schedulable.o
+OBJ=$(WAY)Time.o $(WAY)Event.o $(WAY)Timing.o $(WAY)Professor.o $(WAY)Group.o $(WAY)Schedulable.o
 
-Test4: Test4.cpp Event.o Time.o Timing.o Professor.o Schedulable.o
+Test4: Test4.cpp Event.o Time.o Timing.o Schedulable.o Professor.o Group.o 
 	g++ Test4.cpp $(OBJ) -I ./Classes -o Test4 
 
 Event.o: $(WAY)Event.cpp $(WAY)Event.h
@@ -21,6 +21,9 @@ Schedulable.o: $(WAY)Schedulable.cpp $(WAY)Schedulable.h
 
 Professor.o: $(WAY)Professor.cpp $(WAY)Professor.h
 	g++ $(WAY)Professor.cpp -c -o $(WAY)Professor.o
+
+Group.o: $(WAY)Group.cpp $(WAY)Group.h
+	g++ $(WAY)Group.cpp -c -o $(WAY)Group.o
 
 clean:
 	rm -f $(OBJ) core

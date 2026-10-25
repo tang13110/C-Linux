@@ -3,7 +3,7 @@
 using namespace std;
 
 #include "Professor.h"
-//#include "Group.h"
+#include "Group.h"
 //#include "Classroom.h"
 
 int  Menu();
@@ -25,7 +25,7 @@ int main(int argc,char* argv[])
     switch(choix)
     {
       case 1 : Essai1(); break;
-      //case 2 : Essai2(); break;
+      case 2 : Essai2(); break;
       //case 3 : Essai3(); break;
       //case 4 : Essai4(); break;
       //case 5 : Essai5(); break;
@@ -97,7 +97,7 @@ void Essai1()
 //           l'operateur << de Group
 //           l'operateur d'affectation (=) de Group
 
-/*void Essai2()
+void Essai2()
 {
   cout << endl << "----- 2.1 Test du constructeur par defaut --------------------------------------" << endl;
   Group g1;
@@ -123,7 +123,7 @@ void Essai1()
   cout << endl << "----- 2.6 Test de l'operateur = de Group --------------------------------------" << endl;
   g1 = g3;
   cout << "--> Voici g1 (apres affectation) : " << g1 << endl;
-}*/
+}
 
 /***********************************************************************************************/
 // A FAIRE : la classe Classroom qui herite de Schedulable, contenant en plus un name (string) et une seatingCapacity (int)

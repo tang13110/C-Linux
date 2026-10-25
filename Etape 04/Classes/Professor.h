@@ -30,7 +30,7 @@ class Professor : public Schedulable
 	//Méthodes//
 		string toString() const;
 		string tuple() const;
-		Professor& operator=(const Professor& pf);
+		Professor& operator=(const Professor& pf); //puis-je faire un operator= dans schedulable et faire un override ?
 };
 
 ostream& operator<<(ostream& s, const Professor& pf);
