@@ -4,7 +4,7 @@ using namespace std;
 
 #include "Professor.h"
 #include "Group.h"
-//#include "Classroom.h"
+#include "Classroom.h"
 
 int  Menu();
 void Essai1();
@@ -26,7 +26,7 @@ int main(int argc,char* argv[])
     {
       case 1 : Essai1(); break;
       case 2 : Essai2(); break;
-      //case 3 : Essai3(); break;
+      case 3 : Essai3(); break;
       //case 4 : Essai4(); break;
       //case 5 : Essai5(); break;
       default : fini = true ; break;
@@ -131,7 +131,7 @@ void Essai2()
 //           l'operateur << de Classroom
 //           l'operateur d'affectation (=) de Classroom
 
-/*void Essai3()
+void Essai3()
 {
   cout << endl << "----- 3.1 Test du constructeur par defaut --------------------------------------" << endl;
   Classroom c1;
@@ -159,7 +159,7 @@ void Essai2()
   cout << endl << "----- 3.6 Test de l'operateur = de Classroom ---------------------------------------" << endl;
   c1 = c3;
   cout << "--> Voici c1 (apres affectation) : " << c1 << endl;
-}*/
+}
 
 /******************************************************************************************/
 // A FAIRE : normalement rien...

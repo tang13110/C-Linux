@@ -2,9 +2,9 @@
 #Trier les classes (demander prof). 
 
 WAY=./Classes/
-OBJ=$(WAY)Time.o $(WAY)Event.o $(WAY)Timing.o $(WAY)Professor.o $(WAY)Group.o $(WAY)Schedulable.o
+OBJ=$(WAY)Time.o $(WAY)Event.o $(WAY)Timing.o $(WAY)Professor.o $(WAY)Group.o $(WAY)Schedulable.o $(WAY)Classroom.o
 
-Test4: Test4.cpp Event.o Time.o Timing.o Schedulable.o Professor.o Group.o 
+Test4: Test4.cpp Event.o Time.o Timing.o Schedulable.o Professor.o Group.o Classroom.o
 	g++ Test4.cpp $(OBJ) -I ./Classes -o Test4 
 
 Event.o: $(WAY)Event.cpp $(WAY)Event.h
@@ -24,6 +24,9 @@ Professor.o: $(WAY)Professor.cpp $(WAY)Professor.h
 
 Group.o: $(WAY)Group.cpp $(WAY)Group.h
 	g++ $(WAY)Group.cpp -c -o $(WAY)Group.o
+
+Classroom.o: $(WAY)Classroom.cpp $(WAY)Classroom.h
+	g++ $(WAY)Classroom.cpp -c -o $(WAY)Classroom.o
 
 clean:
 	rm -f $(OBJ) core
