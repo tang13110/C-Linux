@@ -73,7 +73,7 @@ void Essai1()
   cout << "(1) ***** Test de l'operateur d'affectation de Time ****************" << endl;
   cout << "********************************************************************" << endl;
   {
-    Time h1(8,20);
+    Time h1(500);
     cout << "h1 (avant affectation) : ";
     h1.display();
     Time h2;

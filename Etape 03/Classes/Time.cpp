@@ -23,14 +23,7 @@ namespace planning {
 		#ifdef DEBUG
 			cout << "---Time constructeur d'initialisation de durée" << endl;
 		#endif
-		if(duree > 0 && duree <= 1440){
-			setHour(duree/60);
-			setMinute(duree%60);
-		}
-		else{
-			hour = 0;
-			minute = 0;
-		}
+		durationToHour(duree);
 	};
 
 	Time::Time(const Time& copie){
@@ -71,10 +64,21 @@ namespace planning {
 
 	void Time::display() const{
 		if(minute < 10){
-			cout << hour << ":0" << minute << " ";
+			cout << hour << "h0" << minute << " ";
 		}
 		else{
-			cout << hour << ":" << minute << " ";
+			cout << hour << "h" << minute << " ";
+		}
+	};
+
+	void Time::durationToHour(int duree){
+		if(duree > 0 && duree <= 1440){
+			setHour(duree/60);
+			setMinute(duree%60);
+		}
+		else{
+			hour = 0;
+			minute = 0;
 		}
 	};
 
@@ -103,7 +107,7 @@ namespace planning {
 		return copie;
 	};
 
-	Time Time::operator+(const Time& tm){//pq pas amie ?
+	Time Time::operator+(const Time& tm){
 		Time copie(*this);
 		int totalMinutes = tm.hour * 60 + tm.minute;
 		copie = copie + totalMinutes;
@@ -191,7 +195,8 @@ namespace planning {
 	};
 
 	Time operator-(int number, Time& tm){
-		return tm - number;
+		Time forNumber(number);	
+		return forNumber - tm;
 	};
 
 	ostream& operator<<(ostream& s, const Time& tm){
@@ -200,12 +205,18 @@ namespace planning {
 	};
 
 	istream& operator>>(istream& s, Time& tm){
-		int h, m;
+		int h, m, pos;
+		string cinHour;
 		cout << "Heure : ";
-		cin >> h;
-		cout << "Minutes : ";
-		cin >> m;
-		tm.setHour(h); tm.setMinute(m);
+		cin >> cinHour;
+
+		if((pos = cinHour.find('h')) != std::string::npos || (pos = cinHour.find('H')) != std::string::npos){
+			h = stoi(cinHour.substr(0, pos));
+			m = stoi(cinHour.substr(pos + 1, cinHour.length() - (pos + 1)));
+			tm.setHour(h); tm.setMinute(m);
+			return s;
+		}
+		tm.durationToHour(stoi(cinHour));
 		return s;
 	};
 

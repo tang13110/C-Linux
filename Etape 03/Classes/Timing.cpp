@@ -1,7 +1,7 @@
 #include "Timing.h"
 
 namespace planning{
-	//Variables statiques. Faire un par ligne
+	//Variables statiques.
 	const string Timing::MONDAY = "Lundi", 
 	Timing::TUESDAY = "Mardi", 
 	Timing::WEDNESDAY = "Mercredi", 

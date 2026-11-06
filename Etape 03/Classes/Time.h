@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 namespace planning {
@@ -37,6 +38,7 @@ namespace planning {
 
 			//---méthodes---//
 			void display() const;
+			void durationToHour(int duree);
 			Time& operator=(const Time& tm);
 			Time operator+(int number);
 			Time operator+(const Time& tm);
