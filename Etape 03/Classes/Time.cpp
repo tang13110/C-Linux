@@ -71,7 +71,7 @@ namespace planning {
 		}
 	};
 
-	void Time::durationToHour(int duree){
+	void Time::durationToHour(int duree){ //puis-je la mettre en privé car que la classe qui l'utilise ?
 		if(duree > 0 && duree <= 1440){
 			setHour(duree/60);
 			setMinute(duree%60);
@@ -137,7 +137,7 @@ namespace planning {
 		return copie;
 	};
 
-	Time Time::operator-(const Time& tm){//pq pas amie ?
+	Time Time::operator-(const Time& tm){
 		Time copie(*this);
 		int totalMinutes = tm.hour * 60 + tm.minute;
 		copie = copie - totalMinutes;
@@ -190,7 +190,7 @@ namespace planning {
 
 	//Méthodes AMIES//
 
-	Time operator+(int number, Time& tm){ //pq pas constante ?
+	Time operator+(int number, Time& tm){
 		return tm + number;
 	};
 

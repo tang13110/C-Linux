@@ -90,23 +90,20 @@ namespace planning{
 			//même durée
 			return 0;
 		}else{
-			string jours[7] = {"Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"};
-			string joursComp[2] = {day, tmg.day};
-			int i = 0, posDeux[2];
-			while (i < 2){
-				int j = 0;
-				while(j < 7){
-					if(jours[j] == joursComp[i]){
-						posDeux[i] = j;
-						j == 7;
-					}
-					j++;
-				}
-				i++;
-			}
-			if(posDeux[0] > posDeux[1]) return 1;
+			if(posDays(day) > posDays(tmg.day)) return 1;
 			return -1;
 		}
+	};
+
+	int Timing::posDays(const string& day){
+		if(day == "Lundi"){return 1;};
+		if(day == "Mardi"){return 2;};
+		if(day == "Mercredi"){return 3;};
+		if(day == "Jeudi"){return 4;};
+		if(day == "Vendredi"){return 5;};
+		if(day == "Samedi"){return 6;};
+		if(day == "Dimanche"){return 7;};
+		return -1;
 	};
 
 	int Timing::operator>(const Timing& tmg){

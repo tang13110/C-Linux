@@ -14,7 +14,8 @@ namespace planning {
 			string day;
 			Time start, duration;
 
-			int compTiming(const Timing& tmg);		
+			int compTiming(const Timing& tmg);
+			int posDays(const string& day);		
 		public:
 
 			//---Variables constantes---//

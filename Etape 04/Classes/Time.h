@@ -37,6 +37,7 @@ namespace planning {
 
 			//---méthodes---//
 			void display() const;
+			void durationToHour(int duree);
 			Time& operator=(const Time& tm);
 			Time operator+(int number);
 			Time operator+(const Time& tm);
