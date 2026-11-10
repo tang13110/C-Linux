@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 namespace planning {
@@ -17,7 +18,8 @@ namespace planning {
 			int hour;
 			int minute;
 
-			int compTime(const Time& tm);
+			int compTime(const Time& tm) const;
+			void durationToHour(int duree);
 		public:
 
 			//---Constructeurs---//
@@ -34,27 +36,22 @@ namespace planning {
 			void setMinute(int m);
 			int getHour() const;
 			int getMinute() const;
-
-			//---méthodes---//
-			void display() const;
-			void durationToHour(int duree);
 			Time& operator=(const Time& tm);
-			Time operator+(int number);
-			Time operator+(const Time& tm);
-			Time operator-(int number);
-			Time operator-(const Time& tm);
-			int operator<(const Time& tm);
-			int operator>(const Time& tm);
-			int operator==(const Time& tm);
+			Time operator+(int number) const;
+			Time operator+(const Time& tm) const;
+			Time operator-(int number) const;
+			Time operator-(const Time& tm) const;
+			int operator<(const Time& tm) const;
+			int operator>(const Time& tm) const;
+			int operator==(const Time& tm) const;
 			Time operator++();
 			Time operator++(int pourDiff);
 			Time operator--();
 			Time operator--(int pourDiff);
+
+			//---méthodes---//
+			void display() const;
 	};
-	Time operator+(int number, Time& tm);
-	Time operator-(int number, Time& tm);
-	ostream& operator<<(ostream& s, const Time& tm);
-	istream& operator>>(istream& s, Time& tm);
 }
 
 #endif

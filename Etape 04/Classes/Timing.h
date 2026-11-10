@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <iostream>
+#include <string.h>
 #include "Time.h"
 using namespace std;
 
@@ -13,8 +14,8 @@ namespace planning {
 			string day;
 			Time start, duration;
 
-			int compTiming(const Timing& tmg);
-			int posDays(const string& day);		
+			int compTiming(const Timing& tmg) const;
+			int posDays(const string& day) const;		
 		public:
 
 			//---Variables constantes---//
@@ -36,12 +37,13 @@ namespace planning {
 			const string getDay () const;
 			Time getStart() const;
 			Time getDuration() const;
-					
+			int operator>(const Timing& tmg) const;
+			int operator<(const Timing& tmg) const;
+			int operator==(const Timing& tmg) const;
+			//faire l'opérateur égale
+
 			//---méthodes---//
 			void display();
-			int operator>(const Timing& tmg);
-			int operator<(const Timing& tmg);
-			int operator==(const Timing& tmg);
 	};
 }
 

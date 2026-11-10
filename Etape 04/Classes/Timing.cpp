@@ -1,7 +1,7 @@
 #include "Timing.h"
 
 namespace planning{
-	//Variables statiques. Faire un par ligne
+	//Variables statiques.
 	const string Timing::MONDAY = "Lundi", 
 	Timing::TUESDAY = "Mardi", 
 	Timing::WEDNESDAY = "Mercredi", 
@@ -14,7 +14,7 @@ namespace planning{
 
 	Timing::Timing(){
 		#ifdef DEBUG
-			cout << "---Timing constructeur par défaut" << endl;
+			cout << "---Time constructeur par défaut" << endl;
 		#endif
 		setDay("---");
 		setStart(Time(0,0));
@@ -23,7 +23,7 @@ namespace planning{
 
 	Timing::Timing(const string d, const Time& strt, const Time& drt){
 		#ifdef DEBUG
-			cout << "---Timing constructeur par initialisation" << endl;
+			cout << "---Time constructeur par initialisation" << endl;
 		#endif
 		setDay(d);
 		setStart(strt);
@@ -32,7 +32,7 @@ namespace planning{
 
 	Timing::Timing(const Timing&a){
 		#ifdef DEBUG
-			cout << "---Timing constructeur de copie" << endl;
+			cout << "---Time constructeur de copie" << endl;
 		#endif
 		setStart(a.getStart());
 		setDuration(a.getDuration());
@@ -43,7 +43,7 @@ namespace planning{
 
 	Timing::~Timing(){
 		#ifdef DEBUG
-			cout << "---Timing destructeur par défaut" << endl;
+			cout << "---Time destructeur par défaut" << endl;
 		#endif
 	};
 
@@ -80,7 +80,7 @@ namespace planning{
 		duration.display();
 	};
 
-	int Timing::compTiming(const Timing& tmg){
+	int Timing::compTiming(const Timing& tmg) const {
 		if(tmg.day == day){
 			if(start > tmg.start) return 1;
 			if(start < tmg.start) return -1;
@@ -95,26 +95,26 @@ namespace planning{
 		}
 	};
 
-	int Timing::posDays(const string& day){
-		if(day == "Lundi"){return 1;};
-		if(day == "Mardi"){return 2;};
-		if(day == "Mercredi"){return 3;};
-		if(day == "Jeudi"){return 4;};
-		if(day == "Vendredi"){return 5;};
-		if(day == "Samedi"){return 6;};
-		if(day == "Dimanche"){return 7;};
+	int Timing::posDays(const string& day) const {
+		if(day == Timing::MONDAY){return 1;};
+		if(day == Timing::TUESDAY){return 2;};
+		if(day == Timing::WEDNESDAY){return 3;};
+		if(day == Timing::THURSDAY){return 4;};
+		if(day == Timing::FRIDAY){return 5;};
+		if(day == Timing::SATURDAY){return 6;};
+		if(day == Timing::SUNDAY){return 7;};
 		return -1;
-	};
+	}
 
-	int Timing::operator>(const Timing& tmg){
+	int Timing::operator>(const Timing& tmg) const {
 		return compTiming(tmg)==1;
 	};
 
-	int Timing::operator<(const Timing& tmg){
+	int Timing::operator<(const Timing& tmg) const {
 		return compTiming(tmg)==-1;
 	};
 
-	int Timing::operator==(const Timing& tmg){
+	int Timing::operator==(const Timing& tmg) const {
 		return compTiming(tmg)==0;
 	};
 }
