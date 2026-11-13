@@ -48,6 +48,9 @@ namespace planning {
 		if(h < 24 && h >= 0){
 			hour = h;
 		}
+		else{
+			throw TimeException(TimeException::INVALID_HOUR); //ICI
+		}
 	};
 	
 	void Time::setMinute(int m){

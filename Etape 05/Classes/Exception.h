@@ -8,10 +8,15 @@ using namespace std;
 
 class Exception{
 	
-	private:
+	protected:
 		string message;
 	public:
-
-}
+		//constructeur de copie. Utiliser dans les classes héritées
+		Exception();
+		Exception(string mess);
+		Exception(const Exception& copie);
+		//méthode get pour afficher le message contenu
+		string getMessage() const;
+};
 
 #endif

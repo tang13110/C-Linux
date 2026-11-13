@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string.h>
+#include "TimeException.h"
 using namespace std;
 
 namespace planning {

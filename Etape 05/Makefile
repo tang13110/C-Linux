@@ -1,8 +1,8 @@
 WAY=./Classes/
-OBJ=$(WAY)Time.o $(WAY)Event.o $(WAY)Timing.o $(WAY)Professor.o $(WAY)Group.o $(WAY)Schedulable.o $(WAY)Classroom.o
+OBJ=$(WAY)Time.o $(WAY)Event.o $(WAY)Timing.o $(WAY)Professor.o $(WAY)Group.o $(WAY)Schedulable.o $(WAY)Classroom.o $(WAY)Exception.o $(WAY)TimeException.o
 DEBUG=-D DEBUG
 
-Test5: Test5.cpp Event.o Time.o Timing.o Schedulable.o Professor.o Group.o Classroom.o
+Test5: Test5.cpp Event.o Time.o Timing.o Schedulable.o Professor.o Group.o Classroom.o Exception.o TimeException.o
 	g++ Test5.cpp $(OBJ) -I ./Classes -o Test5 
 
 Event.o: $(WAY)Event.cpp $(WAY)Event.h
@@ -25,6 +25,12 @@ Group.o: $(WAY)Group.cpp $(WAY)Group.h
 
 Classroom.o: $(WAY)Classroom.cpp $(WAY)Classroom.h
 	g++ $(WAY)Classroom.cpp -c -o $(WAY)Classroom.o #$(DEBUG)
+
+Exception.o: $(WAY)Exception.cpp $(WAY)Exception.h
+	g++ $(WAY)Exception.cpp -c -o $(WAY)Exception.o #$(DEBUG)
+
+TimeException.o: $(WAY)TimeException.cpp $(WAY)TimeException.h
+	g++ $(WAY)TimeException.cpp -c -o $(WAY)TimeException.o #$(DEBUG)
 
 clean:
 	rm -f $(OBJ) core

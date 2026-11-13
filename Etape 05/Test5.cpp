@@ -5,10 +5,10 @@
 #include "Event.h"
 
 using namespace std;
-//using namespace planning;
+using namespace planning;
 
 int  Menu();
-//void Essai1();
+void Essai1();
 //void Essai2();
 //void Essai3();
 //void Essai4();
@@ -31,7 +31,7 @@ int main(int argc,char* argv[])
     else choix = Menu();
     switch(choix)
     {
-      //case 1 : Essai1(); break;
+      case 1 : Essai1(); break;
       //case 2 : Essai2(); break;
       //case 3 : Essai3(); break;
       //case 4 : Essai4(); break;
@@ -83,7 +83,7 @@ int Menu()
 // qui doit traiter les exceptions. C'est donc uniquement dans le main (ou les fonctions appelees)
 // que l'on trouve des try...catch 
 /**********************************************************************************************/
-/*void Essai1()
+void Essai1()
 {
   cout << "----- 1. Test des constructeurs, setXXX() de la classe Time --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -95,10 +95,17 @@ int Menu()
     cout << "Entrez l'heure h1 :" << endl;
     cout << "Heure  : "; cin >> hour; cin.ignore();
     cout << "Minute : "; cin >> minute; cin.ignore();
+    try{
     Time h1(hour,minute); // !!!
     cout << "--> h1 = " << h1 << endl << endl;
+    }
+    catch(TimeException& tmException){
+      cout << "Erreur : " << tmException.getMessage() << endl;
+    }
 
-    cout << "On modifie l'heure de h1 : " << endl;
+    //TO DO : NAMESPACE PLANNING (enlever :: après INVALID_HOUR ducoup); THROW après NOM FONCTION; REVOIR EXCEPTION
+
+    /*cout << "On modifie l'heure de h1 : " << endl;
     cout << "Nouvelle heure : "; cin >> hour; 
     h1.setHour(hour); // !!!
     cout << "--> h1 = " << h1 << endl << endl;
@@ -112,12 +119,12 @@ int Menu()
     int minutes;
     cout << "Duree en minutes : "; cin >> minutes; cin.ignore();
     Time d1(minutes); // !!!
-    cout << "--> d1 = " << d1 << endl << endl;    
+    cout << "--> d1 = " << d1 << endl << endl;*/    
   }
   // ...
   
   cout << endl;
-}*/
+}
 
 /**********************************************************************************************/
 /*void Essai2()
