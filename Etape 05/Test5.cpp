@@ -5,20 +5,20 @@
 #include "Event.h"
 
 using namespace std;
-using namespace planning;
+//using namespace planning;
 
 int  Menu();
-void Essai1();
-void Essai2();
-void Essai3();
-void Essai4();
-void Essai5();
-void Essai6();
-void Essai7();
-void Essai8();
-void Essai9();
-void Essai10();
-void Essai11();
+//void Essai1();
+//void Essai2();
+//void Essai3();
+//void Essai4();
+//void Essai5();
+//void Essai6();
+//void Essai7();
+//void Essai8();
+//void Essai9();
+//void Essai10();
+//void Essai11();
 
 int main(int argc,char* argv[])
 {
@@ -31,17 +31,17 @@ int main(int argc,char* argv[])
     else choix = Menu();
     switch(choix)
     {
-      case 1 : Essai1(); break;
-      case 2 : Essai2(); break;
-      case 3 : Essai3(); break;
-      case 4 : Essai4(); break;
-      case 5 : Essai5(); break;
-      case 6 : Essai6(); break;
-      case 7 : Essai7(); break;
-      case 8 : Essai8(); break;
-      case 9 : Essai9(); break;
-      case 10 : Essai10(); break;
-      case 11 : Essai11(); break;
+      //case 1 : Essai1(); break;
+      //case 2 : Essai2(); break;
+      //case 3 : Essai3(); break;
+      //case 4 : Essai4(); break;
+      //case 5 : Essai5(); break;
+      //case 6 : Essai6(); break;
+      //case 7 : Essai7(); break;
+      //case 8 : Essai8(); break;
+      //case 9 : Essai9(); break;
+      //case 10 : Essai10(); break;
+      //case 11 : Essai11(); break;
       default : fini = true ; break;
     }
   }
@@ -83,7 +83,7 @@ int Menu()
 // qui doit traiter les exceptions. C'est donc uniquement dans le main (ou les fonctions appelees)
 // que l'on trouve des try...catch 
 /**********************************************************************************************/
-void Essai1()
+/*void Essai1()
 {
   cout << "----- 1. Test des constructeurs, setXXX() de la classe Time --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -117,10 +117,10 @@ void Essai1()
   // ...
   
   cout << endl;
-}
+}*/
 
 /**********************************************************************************************/
-void Essai2()
+/*void Essai2()
 {
   cout << "----- 2. Test de l'operateur (Time + int) de la classe Time --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -138,10 +138,10 @@ void Essai2()
   // ...
   
   cout << endl;
-}
+}*/
 
 /**********************************************************************************************/
-void Essai3()
+/*void Essai3()
 {
   cout << "----- 3. Test de l'operateur (int + Time) de la classe Time --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -159,10 +159,10 @@ void Essai3()
   // ...
   
   cout << endl;
-}
+}*/
 
 /**********************************************************************************************/
-void Essai4()
+/*void Essai4()
 {
   cout << "----- 4. Test de l'operateur (Time - int) de la classe Time --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -180,10 +180,10 @@ void Essai4()
   // ...
   
   cout << endl;
-}
+}*/
 
 /**********************************************************************************************/
-void Essai5()
+/*void Essai5()
 {
   cout << "----- 5. Test de l'operateur (int - Time) de la classe Time --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -201,10 +201,10 @@ void Essai5()
   // ...
   
   cout << endl;
-}
+}*/
 
 /**********************************************************************************************/
-void Essai6()
+/*void Essai6()
 {
   cout << "----- 6. Test de l'operateur (Time + Time) de la classe Time --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -224,10 +224,10 @@ void Essai6()
   // ...
   
   cout << endl;
-}
+}*/
 
 /**********************************************************************************************/
-void Essai7()
+/*void Essai7()
 {
   cout << "----- 7. Test de l'operateur (Time - Time) de la classe Time --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -245,10 +245,10 @@ void Essai7()
   // ...
   
   cout << endl;
-}
+}*/
 
 /**********************************************************************************************/
-void Essai8()
+/*void Essai8()
 {
   cout << "----- 8. Test de l'operateur ++ de la classe Time --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -265,10 +265,10 @@ void Essai8()
   // ...
   
   cout << endl;
-}
+}*/
 
 /**********************************************************************************************/
-void Essai9()
+/*void Essai9()
 {
   cout << "----- 9. Test de l'operateur -- de la classe Time --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -285,10 +285,10 @@ void Essai9()
   // ...
   
   cout << endl;
-}
+}*/
 
 /**********************************************************************************************/
-void Essai10()
+/*void Essai10()
 {
   cout << "----- 10. Test de la methode setDay() de la classe Timing --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -306,10 +306,10 @@ void Essai10()
   // ...
   
   cout << endl;
-}
+}*/
 
 /**********************************************************************************************/
-void Essai11()
+/*void Essai11()
 {
   cout << "----- 11. Gestion de plusieurs exceptions simultanement ---" << endl;
   // A COMPLETER : Traitez TOUTES les exceptions susceptible d'etre lancee par le bloc de code suivant (try...catch)
@@ -346,6 +346,6 @@ void Essai11()
     e.getTiming().display();  // !!!
   }
   // ...
-}
+}*/
 
 
