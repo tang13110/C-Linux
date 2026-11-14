@@ -49,6 +49,7 @@ namespace planning{
 
 	//Set et Get
 	void Timing::setDay(const string d){
+		if(d != "---" && posDays(d) == -1){throw(TimingException(TimingException::INVALID_DAY));}
 		day = d;
 	};
 

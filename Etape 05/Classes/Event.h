@@ -5,6 +5,7 @@
 #include <iostream>
 #include <string.h>
 #include "Timing.h"
+#include "TimingException.h"
 using namespace std;
 
 namespace planning {

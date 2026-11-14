@@ -71,7 +71,10 @@ namespace planning {
 
   const char* Event::getTitle() const {return title;};
 
-  Timing Event::getTiming() const {return *timing;};
+  Timing Event::getTiming() const {
+    if(timing == nullptr){throw(TimingException(TimingException::NO_TIMING));};
+    return *timing;
+  };
 
   //---Méthodes---//
 

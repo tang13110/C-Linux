@@ -17,8 +17,8 @@ void Essai6();
 void Essai7();
 void Essai8();
 void Essai9();
-//void Essai10();
-//void Essai11();
+void Essai10();
+void Essai11();
 
 int main(int argc,char* argv[])
 {
@@ -40,8 +40,8 @@ int main(int argc,char* argv[])
       case 7 : Essai7(); break;
       case 8 : Essai8(); break;
       case 9 : Essai9(); break;
-      //case 10 : Essai10(); break;
-      //case 11 : Essai11(); break;
+      case 10 : Essai10(); break;
+      case 11 : Essai11(); break;
       default : fini = true ; break;
     }
   }
@@ -310,13 +310,13 @@ void Essai9()
 }
 
 /**********************************************************************************************/
-/*void Essai10()
+void Essai10()
 {
   cout << "----- 10. Test de la methode setDay() de la classe Timing --------" << endl;
   // A COMPLETER : Traitez l'exception susceptible d'etre lancee par le bloc de code suivant (try...catch)
   // en particulier : afficher le message de l'exception lancee et le code de l'erreur
 
-  // ...
+  try
   {
     Timing t;
     string day;
@@ -325,18 +325,20 @@ void Essai9()
     t.setDay(day);
     t.display();
   }
-  // ...
+  catch(TimingException& tmException){
+      cout << "Erreur : " << tmException.getMessage() << endl;
+    }  
   
   cout << endl;
-}*/
+}
 
 /**********************************************************************************************/
-/*void Essai11()
+void Essai11()
 {
   cout << "----- 11. Gestion de plusieurs exceptions simultanement ---" << endl;
   // A COMPLETER : Traitez TOUTES les exceptions susceptible d'etre lancee par le bloc de code suivant (try...catch)
 
-  // ...
+  try
   {
     Timing t;
     string day;
@@ -367,7 +369,12 @@ void Essai9()
     cout << "Voici le Timing de l'Event planifie : ";
     e.getTiming().display();  // !!!
   }
-  // ...
-}*/
+  catch(TimingException& tmException){ //demander si catch classe mère nécessaire.
+      cout << "Erreur : " << tmException.getMessage() << endl;
+    }
+  catch(TimeException& tmException){
+      cout << "Erreur : " << tmException.getMessage() << endl;
+    }   
+}
 
 
