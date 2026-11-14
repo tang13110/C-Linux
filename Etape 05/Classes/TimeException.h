@@ -7,27 +7,28 @@
 #include "Exception.h"
 using namespace std;
 
-class TimeException : public Exception //mettre namespace planning pour éviter bug
-{
-	private:
-		int code;
-	public:
+namespace planning {
+	class TimeException : public Exception
+	{
+		private:
+			int code;
+		public:
 
-		//---Variables statiques---//
-		static const int INVALID_HOUR, INVALID_MINUTE, OVERFLOW;
+			//---Variables statiques---//
+			static const int INVALID_HOUR, INVALID_MINUTE, OVERFLOW;
 
-		//---Constructeurs---//
-		TimeException();
-		TimeException(int c);
-		TimeException(const TimeException& copie);
+			//---Constructeurs---//
+			TimeException();
+			TimeException(int c);
+			TimeException(const TimeException& copie);
 
-		//---Destructeur---//
-		~TimeException();
+			//---Destructeur---//
+			~TimeException();
 
-		//---Set et Get---//
-		void setCode(int c);
-		int getCode();
+			//---Set et Get---//
+			void setCode(int c);
+			int getCode();
 
-};
-
+	};
+}
 #endif

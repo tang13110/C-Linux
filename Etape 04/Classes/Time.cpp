@@ -72,14 +72,8 @@ namespace planning {
 			return copie - (number * -1);
 		}
 		else{
-			int res = minute + number; 
-			Time copie(res);
-			if(res > 59){
-				copie.hour = copie.hour + hour;
-			}else{
-				copie.hour = hour;
-			}
-			return copie;
+			int total = minute + number + (hour * 60);
+			return total;
 		}
 	};
 

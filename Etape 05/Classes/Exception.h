@@ -11,12 +11,18 @@ class Exception{
 	protected:
 		string message;
 	public:
-		//constructeur de copie. Utiliser dans les classes héritées
-		Exception();
-		Exception(string mess);
-		Exception(const Exception& copie);
-		//méthode get pour afficher le message contenu
-		string getMessage() const;
+
+		//---Constructeur---//
+			Exception();
+			Exception(string mess);
+			Exception(const Exception& copie);
+
+		//---Destructeur---//
+			~Exception();
+
+		//--Set et Get---//
+			string getMessage() const;
+			void setMessage(string msg);
 };
 
 #endif

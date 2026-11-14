@@ -49,13 +49,16 @@ namespace planning {
 			hour = h;
 		}
 		else{
-			throw TimeException(TimeException::INVALID_HOUR); //ICI
+			throw TimeException(TimeException::INVALID_HOUR); //obligé de garder ?
 		}
 	};
 	
 	void Time::setMinute(int m){
 		if(m < 60 && m >= 0){
 			minute = m;
+		}
+		else{
+			throw TimeException(TimeException::INVALID_MINUTE);
 		}
 	}; 
 
@@ -75,14 +78,8 @@ namespace planning {
 			return copie - (number * -1);
 		}
 		else{
-			int res = minute + number; 
-			Time copie(res);
-			if(res > 59){
-				copie.hour = copie.hour + hour;
-			}else{
-				copie.hour = hour;
-			}
-			return copie;
+			int total = minute + number + (hour * 60);
+			return total;
 		}
 	};
 
@@ -93,7 +90,7 @@ namespace planning {
 		return copie;
 	};
 
-	Time Time::operator-(int number) const { //à corriger
+	Time Time::operator-(int number) const {
 		
 		if(number < 0){
 			Time copie(*this);
@@ -127,23 +124,35 @@ namespace planning {
 
 	Time Time::operator++(){
 		(*this) = (*this) + 30;
+		if((*this) > Time(23, 59)){
+			throw TimeException(TimeException::OVERFLOW);
+		}
 		return (*this);
 	};
 
 	Time Time::operator++(int pourDiff){
 		Time copie(*this);
 		(*this) = (*this) + 30;
+		if(copie > Time(23, 59)){
+			throw TimeException(TimeException::OVERFLOW);
+		}
 		return copie;
 	};
 
 	Time Time::operator--(){
 		(*this) = (*this) - 30;
+		if((*this) < Time(0,0)){
+			throw TimeException(TimeException::OVERFLOW);
+		}
 		return (*this);
 	};
 
 	Time Time::operator--(int pourDiff){
 		Time copie(*this);
 		(*this) = (*this) - 30;
+		if(copie < Time(0,0)){
+			throw TimeException(TimeException::OVERFLOW);
+		}
 		return copie;
 	};
 
@@ -169,14 +178,8 @@ namespace planning {
 	};
 
 	void Time::durationToHour(int duree){
-		if(duree > 0 && duree <= 1440){
-			setHour(duree/60);
-			setMinute(duree%60);
-		}
-		else{
-			hour = 0;
-			minute = 0;
-		}
+		setHour(duree/60);
+		setMinute(duree%60);
 	};
 
 	//Méthodes AMIES//
@@ -198,7 +201,7 @@ namespace planning {
 	istream& operator>>(istream& s, Time& tm){
 		int h, m;
 		char car;
-
+		cout << "Heure (00h00) : ";
 		s>>h;
 		s>>car;
 		s>>m;
