@@ -84,8 +84,7 @@ namespace planning {
 		return copie;
 	};
 
-	Time Time::operator-(int number) const { //à corriger
-		
+	Time Time::operator-(int number) const {
 		if(number < 0){
 			Time copie(*this);
 			return copie + (number * -1);
@@ -200,7 +199,7 @@ namespace planning {
 			return s;
 		}
 		tm.durationToHour(stoi(cinHour));
-		return s;
+		return s; //voir étape 5
 	};
 
 }

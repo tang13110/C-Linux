@@ -12,8 +12,8 @@ namespace planning {
 	{
 		private:
 			int code;
-		public:
 
+		public:
 			//---Variables statiques---//
 			static const int INVALID_HOUR, INVALID_MINUTE, OVERFLOW;
 
@@ -27,8 +27,8 @@ namespace planning {
 
 			//---Set et Get---//
 			void setCode(int c);
-			int getCode();
-
+			int getCode() const;
+			TimeException& operator=(const TimeException& TmXcpt);
 	};
 }
 #endif

@@ -28,9 +28,7 @@ class Group : public Schedulable
 	//Méthodes//
 		string toString() const override;
 		string tuple() const override;
-		Group& operator=(const Group& grp); //voir professeur.h
+		Group& operator=(const Group& grp);
 };
-
-ostream& operator<<(ostream& s, const Group& grp);
 
 #endif

@@ -1,46 +1,44 @@
 #include "Schedulable.h"
 
-		//Constructeurs//
-		Schedulable::Schedulable(){
-			#ifdef DEBUG
-			cout << "---Schedulable constructeur par défaut" << endl;
-			#endif
-			id = 0;
-		};
+	//Constructeurs//
+	Schedulable::Schedulable(){
+		#ifdef DEBUG
+		cout << "---Schedulable constructeur par défaut" << endl;
+		#endif
+		setId(0);
+	};
 
-		Schedulable::Schedulable(int num){
-			#ifdef DEBUG
-			cout << "---Schedulable constructeur d'initialisation" << endl;
-			#endif
-			id = num;
-		};
+	Schedulable::Schedulable(int num){
+		#ifdef DEBUG
+		cout << "---Schedulable constructeur d'initialisation" << endl;
+		#endif
+		setId(num);
+	};
 
-		Schedulable::Schedulable(const Schedulable& a){
-			#ifdef DEBUG
-			cout << "---Schedulable constructeur de copie" << endl;
-			#endif
-			id = a.id;
-		};
+	Schedulable::Schedulable(const Schedulable& a){
+		#ifdef DEBUG
+		cout << "---Schedulable constructeur de copie" << endl;
+		#endif
+		setId(a.getId());
+	};
 
-		//Destructeur//
+	//Destructeur//
+	Schedulable::~Schedulable(){
+		#ifdef DEBUG
+		cout << "---Schedulable destructeur par défaut" << endl;
+		#endif
+	};
 
-		Schedulable::~Schedulable(){
-			#ifdef DEBUG
-			cout << "---Schedulable destructeur par défaut" << endl;
-			#endif
-		};
+	//set et get//
+	int Schedulable::getId() const{
+		return id;
+	};
 
-		//set et get//
+	void Schedulable::setId(int num){
+		id = num;
+	};
 
-		int Schedulable::getId(){
-			return id;
-		};
-
-		void Schedulable::setId(int num){
-			id = num;
-		};
-
-		//Méthodes//
-
-		string Schedulable::toString() const {return "a";};
-		string Schedulable::tuple() const {return "a";};
+	Schedulable& Schedulable::operator=(const Schedulable& schdl){
+		setId(schdl.getId());
+		return *this;
+	};

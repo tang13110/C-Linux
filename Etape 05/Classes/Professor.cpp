@@ -59,9 +59,9 @@
 	};
 
 	Professor& Professor::operator=(const Professor& pf){
-		id = pf.id;
-		lastName = pf.lastName;
-		firstName = pf.firstName;
+		setId(pf.getId());
+		setLastName(pf.getLastName());
+		setFirstName(pf.getFirstName());
 		return (*this);
 	};
 

@@ -1,40 +1,44 @@
 #include"Exception.h"
 
-		//---Constructeurs---// //
+	//---Constructeurs---// //
+	Exception::Exception(){
+		#ifdef DEBUG
+		cout << "---Exception constructeur par défaut" << endl;
+		#endif
+		setMessage("---");
+	};
 
-		Exception::Exception(){
-			#ifdef DEBUG
-			cout << "---Exception constructeur par défaut" << endl;
-			#endif
-			message = "---";
-		};
+	Exception::Exception(string mess){
+		#ifdef DEBUG
+		cout << "---Exception constructeur d'initialisation" << endl;
+		#endif
+		setMessage(mess);
+	};
 
-		Exception::Exception(string mess){
-			#ifdef DEBUG
-			cout << "---Exception constructeur d'initialisation" << endl;
-			#endif
-			setMessage(mess);
-		};
+	Exception::Exception(const Exception& copie){
+		#ifdef DEBUG
+		cout << "---Exception constructeur de copie" << endl;
+		#endif
+		setMessage(copie.message);
+	};
 
-		Exception::Exception(const Exception& copie){
-			#ifdef DEBUG
-			cout << "---Exception constructeur de copie" << endl;
-			#endif
-			setMessage(copie.message);
-		};
+	//---Destructeur---//
+	Exception::~Exception(){
+		#ifdef DEBUG
+		cout << "---Exception destructeur de base" << endl;
+		#endif
+	};
 
-		//---Destructeur---//
-		Exception::~Exception(){
-			#ifdef DEBUG
-			cout << "---Exception destructeur de base" << endl;
-			#endif
-		};
+	//---Set et Get---//
+	string Exception::getMessage() const {
+		return message;
+	};
 
-		//---Set et Get---//
-		string Exception::getMessage() const {
-			return message;
-		};
+	void Exception::setMessage(string msg){
+		message = msg;
+	};
 
-		void Exception::setMessage(string msg){
-			message = msg;
-		};
+	Exception& Exception::operator=(const Exception& Xcpt){
+		setMessage(Xcpt.getMessage());
+		return *this;
+	};

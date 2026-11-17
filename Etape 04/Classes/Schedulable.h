@@ -1,15 +1,9 @@
-#ifndef SCHEDULABLE //pq pas #pragma once ?
+#ifndef SCHEDULABLE
 #define SCHEDULABLE
 
 #include <stdlib.h>
 #include <iostream>
-using namespace std;	//j'ai lu sur un forum que pouvait causer des bugs? 
-
-//IMPORTANT//
-/*Ceci est une classe abstraite mère des classes Professor, Group
-et Classroom. Deux fonctions virtuelles pures: toString et toTulpe
-redéfinies (override) dans les classes respectives. VOIR THEORIE*/
-//IMPORANT//
+using namespace std;
 
 class Schedulable
 {
@@ -24,15 +18,16 @@ class Schedulable
 		Schedulable(const Schedulable& a);
 
 		//Destructeur//
-		~Schedulable();	//pourquoi le noter depuis le début si on utilise le destr de base ? pédagogie ?
+		~Schedulable();
 
 		//Set et Get//
-		int getId();
+		int getId() const;
 		void setId(int num);
+		Schedulable& operator=(const Schedulable& schdl);
 
 		//Méthodes//
-		virtual string toString() const;
-		virtual string tuple() const;
+		virtual string toString() const = 0;
+		virtual string tuple() const = 0;
 };
 
 #endif

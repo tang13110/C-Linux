@@ -10,19 +10,20 @@ class Exception{
 	
 	protected:
 		string message;
+
 	public:
+	//---Constructeur---//
+		Exception();
+		Exception(string mess);
+		Exception(const Exception& copie);
 
-		//---Constructeur---//
-			Exception();
-			Exception(string mess);
-			Exception(const Exception& copie);
+	//---Destructeur---//
+		~Exception();
 
-		//---Destructeur---//
-			~Exception();
-
-		//--Set et Get---//
-			string getMessage() const;
-			void setMessage(string msg);
+	//--Set et Get---//
+		string getMessage() const;
+		void setMessage(string msg);
+		Exception& operator=(const Exception& Xcpt);
 };
 
 #endif

@@ -49,7 +49,7 @@ namespace planning {
 			hour = h;
 		}
 		else{
-			throw TimeException(TimeException::INVALID_HOUR); //obligé de garder ?
+			throw TimeException(TimeException::INVALID_HOUR);
 		}
 	};
 	

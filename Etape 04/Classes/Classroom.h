@@ -26,14 +26,12 @@ class Classroom : public Schedulable
 		void setName(const string& nm);
 		void setSeatingCapacity(int seat);
 		string getName() const;
-		int getSeatingCapacity();
+		int getSeatingCapacity() const;
 
 	//Méthodes//
 		string toString() const override;
 		string tuple() const override;
-		Classroom& operator=(const Classroom& clsrm); //voir professeur.h
+		Classroom& operator=(const Classroom& clsrm);
 };
-
-ostream& operator<<(ostream& s, const Classroom& clsrm);
 
 #endif

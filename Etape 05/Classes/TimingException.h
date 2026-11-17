@@ -27,8 +27,8 @@ namespace planning {
 
 			//---Set et Get---//
 			void setCode(int c);
-			int getCode();
-
+			int getCode() const;
+			TimingException& operator=(const TimingException& TmngXcpt);
 	};
 }
 #endif
